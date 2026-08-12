@@ -2,7 +2,8 @@
 A mail server is a software system that sends, receives, and stores email using protocols like SMTP, IMAP, and POP3. It acts as the backbone of email communication, routing messages between clients such as Outlook, Gmail, or Apple Mail.
 
 ---
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/d7299c22-cc3a-452e-99d4-42f51a8f9755" />
+<img width="991" height="299" alt="image" src="https://github.com/user-attachments/assets/bc9121ec-180e-41ed-98c8-8c7050de8c5b" />
+<img width="977" height="207" alt="image" src="https://github.com/user-attachments/assets/be80b8c3-d7b4-4f35-844a-9a43f2a238c4" />
 
 
 ## Mail Server Command Reference 
