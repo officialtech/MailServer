@@ -2,9 +2,10 @@
 A mail server is a software system that sends, receives, and stores email using protocols like SMTP, IMAP, and POP3. It acts as the backbone of email communication, routing messages between clients such as Outlook, Gmail, or Apple Mail.
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/d7299c22-cc3a-452e-99d4-42f51a8f9755" />
 
 
-## Mail Server Command Reference
+## Mail Server Command Reference 
 
 A practical command reference for building and troubleshooting a Linux mail server using Postfix, Dovecot, MySQL/MariaDB, Rspamd, Redis, Nginx and TLS.
 
@@ -20,6 +21,8 @@ Replace placeholders before running commands.
 > **Safety:** Read destructive commands carefully. Commands such as `rm`, `postsuper`, `redis-cli FLUSHALL`, database `DROP`, firewall changes, and service removal can cause data loss or downtime.
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/f26704cf-34da-479d-9b52-0e89b37f13a8" />
+
 
 ## 1. System and OS
 
@@ -89,6 +92,8 @@ systemctl is-active postfix dovecot rspamd redis-server nginx
 ```
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/1b1eb2aa-6819-42eb-ab88-dce06f1e3328" />
+
 
 ## 2. DNS
 
@@ -147,6 +152,8 @@ dig TXT example.com @8.8.8.8
 Useful when a DNS change appears correct locally but is not visible everywhere.
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/fbbc3ca8-61d2-4855-ad90-fa237470d679" />
+
 
 ## 3. Network Ports
 
@@ -181,6 +188,8 @@ nc -vz 127.0.0.1 3306
 ```
 
 ---
+<img width="130" height="91" alt="image" src="https://github.com/user-attachments/assets/b8869aa2-a4df-4c2d-ba23-092b3c3942c8" />
+
 
 ## 4. Postfix
 
@@ -272,6 +281,8 @@ postqueue -p | grep -E '^[A-F0-9]{10,}'
 ```
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/203c71bd-43b9-4f8c-892f-e6903fc4cda0" />
+
 
 ## 5. Postfix MySQL Maps
 
@@ -299,6 +310,8 @@ postmap -q example.com mysql:/path/to/mysql-virtual-domains.cf
 These are among the most useful commands when Postfix says a recipient/domain cannot be found.
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/131a9f71-4d0d-4113-b831-0bb681c15ba0" />
+
 
 ## 6. Postfix Logs
 
@@ -338,6 +351,8 @@ sudo grep -iE 'deferred|bounced|reject|warning|error' /var/log/mail.log | tail -
 ```
 
 ---
+<img width="398" height="200" alt="image" src="https://github.com/user-attachments/assets/99e27b04-6780-461c-b33a-6d436e7ed42c" />
+
 
 ## 7. Dovecot
 
@@ -425,6 +440,8 @@ sudo journalctl -u dovecot -f
 ```
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/12e34e93-08c6-45bf-aa3c-2692a56e2b54" />
+
 
 ## 8. LMTP Troubleshooting
 
@@ -477,6 +494,8 @@ doveadm user user@example.com -x protocol=lmtp
 If only LMTP fails, check protocol-specific username formatting.
 
 ---
+<img width="549" height="390" alt="image" src="https://github.com/user-attachments/assets/2e2f4455-ac0a-4a28-93e3-8b85f5e41840" />
+
 
 ## 9. MySQL/MariaDB
 
@@ -564,6 +583,8 @@ SHOW GRANTS FOR 'mailuser'@'localhost';
 Use a least-privileged application account. Do not use database root credentials in Postfix/Dovecot.
 
 ---
+<img width="549" height="351" alt="image" src="https://github.com/user-attachments/assets/fb7f541e-9910-4f06-8315-530cc99751e7" />
+
 
 ## 10. DKIM / OpenDKIM
 
@@ -610,6 +631,8 @@ postconf -n | grep -i milter
 ```
 
 ---
+<img width="772" height="484" alt="image" src="https://github.com/user-attachments/assets/32d49451-c7a2-4c1d-b2af-6587679384fc" />
+
 
 ## 11. Rspamd
 
@@ -677,6 +700,8 @@ rspamc stat
 ```
 
 ---
+<img width="322" height="213" alt="image" src="https://github.com/user-attachments/assets/1737678d-3773-4621-8736-6fc41ed80ead" />
+
 
 ## 12. Rspamd Controller / WebUI
 
@@ -717,6 +742,8 @@ That is expected for protected endpoints.
 Keep controller ports private and expose the UI through authenticated HTTPS if needed.
 
 ---
+<img width="321" height="94" alt="image" src="https://github.com/user-attachments/assets/8039f691-d5a5-459a-ad90-5c0801c61f62" />
+
 
 ## 13. Redis
 
@@ -757,6 +784,8 @@ redis-cli --scan | head -50
 Do not use destructive commands on production Redis unless you are intentionally deleting the stored state.
 
 ---
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/fcfc9979-e39f-4fff-b0ef-2075c0348b29" />
+
 
 ## 14. Nginx
 
@@ -808,6 +837,8 @@ sudo tail -n 100 /var/log/nginx/access.log
 ```
 
 ---
+<img width="597" height="399" alt="image" src="https://github.com/user-attachments/assets/43de5edd-089c-4feb-b3b4-5dde7f5d2ba3" />
+
 
 ## 15. TLS
 
@@ -841,6 +872,8 @@ echo | openssl s_client -connect mail.example.com:443 2>/dev/null \
 ```
 
 ---
+<img width="135" height="130" alt="image" src="https://github.com/user-attachments/assets/7e8a11d7-117e-4a4a-a94d-0313a13d4fe2" />
+
 
 ## 16. Fail2ban
 
@@ -868,6 +901,8 @@ sudo fail2ban-client set sshd unbanip <IP>
 Only unban an address you recognize.
 
 ---
+<img width="395" height="390" alt="image" src="https://github.com/user-attachments/assets/fcdd64a0-0951-4ec4-b36b-5f7c088c800a" />
+
 
 ## 17. Firewall
 
@@ -888,6 +923,8 @@ sudo ss -lntup
 Do not open administrative services to the Internet unless needed.
 
 ---
+<img width="347" height="360" alt="image" src="https://github.com/user-attachments/assets/05be3ec2-cd28-4094-8340-bbc267ade592" />
+
 
 ## 18. Service Restart vs Reload
 
@@ -922,6 +959,8 @@ sudo nginx -t && sudo systemctl reload nginx
 Use full restarts when a reload is insufficient or when the service documentation explicitly requires one.
 
 ---
+<img width="405" height="401" alt="image" src="https://github.com/user-attachments/assets/68f57035-6c7b-48f4-924c-b8e249a54a27" />
+
 
 ## 19. Backup Validation
 
@@ -959,6 +998,8 @@ systemctl list-timers --all | grep backup
 ```
 
 ---
+<img width="491" height="366" alt="image" src="https://github.com/user-attachments/assets/2eee921b-30b9-4273-bb7f-cabf018e2ab5" />
+
 
 ## 20. Useful One-Line Health Check
 
@@ -988,6 +1029,8 @@ sudo postfix check && sudo rspamadm configtest && sudo nginx -t
 ```
 
 ---
+<img width="559" height="302" alt="image" src="https://github.com/user-attachments/assets/7a9af5c8-dd32-4aa2-8b99-69e793baaa23" />
+
 
 ## 21. Message-Tracking Workflow
 
@@ -1054,6 +1097,8 @@ Often indicates temporary failure/defer/retry behavior.
 Do not infer the exact cause from a status code alone; read the complete server response.
 
 ---
+<img width="589" height="283" alt="image" src="https://github.com/user-attachments/assets/c71b574a-17a9-40ad-b568-3b921ee323f3" />
+
 
 ## 22. Recommended Debugging Order
 
@@ -1073,6 +1118,10 @@ For almost every mail problem, use this order:
 ```
 
 This prevents changing several unrelated services at once.
+
+
+<img width="664" height="222" alt="image" src="https://github.com/user-attachments/assets/9afb6aac-1839-41a3-a440-9fd5b130f287" />
+
 
 ## Golden rule
 
