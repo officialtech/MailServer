@@ -287,6 +287,13 @@ doveadm pw -s ARGON2ID
 > - *{ARGON2ID}$argon2id$v=19$m=65536,t=4,p=1$...*
 > - *Copy the output and paste it in the database query.*
 
+---
+### How to verify your password hash or (reverse password verification check)
+```bash
+doveadm pw -s ARGON2ID -p "your_password" -t "{ARGON2ID}$argon2id$v=19$m=65536,t=3,p=1$c2FsdHNhbHHJBJB0+1K7x3v8zQJBQxYZJBQ"
+```
+---
+
 Verify:
 
 ```bash
