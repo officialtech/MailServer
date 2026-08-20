@@ -272,6 +272,7 @@ The returned value must match your existing SQL query expectations.
 ### 11.2 `virtual_users` (Mailbox)  
 
 ```sql
+# NOTE: Always use single quote for the VALUES
 INSERT INTO virtual_users (email, password_hash, domain_id, active)
 VALUES ('admin@newdomain.com', '<HASH>', <DOMAIN_ID>, 1);
 ```
@@ -291,6 +292,8 @@ doveadm pw -s ARGON2ID
 ### How to verify your password hash or (reverse password verification check)
 ```bash
 doveadm pw -s ARGON2ID -p "your_password" -t "{ARGON2ID}$argon2id$v=19$m=65536,t=3,p=1$c2FsdHNhbHHJBJB0+1K7x3v8zQJBQxYZJBQ"
+# Bonus:
+doveadm auth test your_email "your_raw_password"
 ```
 ---
 
