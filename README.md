@@ -440,6 +440,15 @@ sudo journalctl -u dovecot -f
 # Follows Dovecot logs live.
 ```
 
+```bash
+nano /etc/dovecot/conf.d/10-logging.conf
+mail_debug = yes
+auth_debug = yes
+auth_verbose = yes
+
+# Add these lines, you can see all the mail and auth logs
+```
+
 ---
 <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/12e34e93-08c6-45bf-aa3c-2692a56e2b54" />
 
